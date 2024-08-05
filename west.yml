@@ -1,0 +1,33 @@
+# Copyright (c) 2021 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+manifest:
+  self:
+    path: manifest
+
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+    - name: facchinm
+      url-base: git@github.com:facchinm
+
+  projects:
+    - name: zephyr
+      remote: facchinm
+      revision: arduino-core-test
+      import:
+        name-allowlist:
+          - cmsis
+          - littlefs
+          - hal_nxp
+          - hal_stm32
+          - hal_renesas
+          - segger
+    - name: ArduinoCore-Zephyr
+      path: core
+      revision: next
+      url: git@github.com:pillo79/zephyr-gsoc-core
+    - name: ArduinoCore-API
+      path: include
+      revision: master
+      url: git@github.com:arduino/ArduinoCore-API
