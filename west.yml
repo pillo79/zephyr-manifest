@@ -10,11 +10,13 @@ manifest:
       url-base: https://github.com/zephyrproject-rtos
     - name: facchinm
       url-base: git@github.com:facchinm
+    - name: pillo79
+      url-base: git@github.com:pillo79
 
   projects:
     - name: zephyr
-      remote: facchinm
-      revision: arduino-core-test
+      remote: pillo79
+      revision: pr-stable-dt-hash
       import:
         name-allowlist:
           - cmsis
@@ -28,6 +30,6 @@ manifest:
       revision: next
       url: git@github.com:pillo79/zephyr-gsoc-core
     - name: ArduinoCore-API
-      path: include
-      revision: master
-      url: git@github.com:arduino/ArduinoCore-API
+      path: modules/ArduinoCore-API
+      url: git@github.com:pillo79/ArduinoCore-API
+      revision: zephyr
